@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="#2f044f"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_marginLeft="30dp"
+        android:id="@+id/btncall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/call"
+        />
+    <ImageView
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="33dp"
+        android:id="@+id/btncallx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/x"
+        />
+
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/btnhelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hepl"
+        android:layout_toRightOf="@id/btncall"
+        />
+    <ImageButton
+    android:id="@+id/btnpercen50"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/percent50"
+    android:layout_toRightOf="@id/btnhelp"
+    android:layout_marginLeft="10dp"
+    />
+
+    <ImageView
+        android:layout_marginLeft="162dp"
+        android:id="@+id/btncallx50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnpercen50"
+
+        android:src="@drawable/x" />
+    <ImageButton
+    android:id="@+id/btnrestart"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/restart"
+    android:layout_toRightOf="@id/btnpercen50"
+    android:layout_marginLeft="10dp"
+    />
+
+    <ImageView
+        android:id="@+id/btnxReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="228dp"
+        android:layout_alignBottom="@+id/btnrestart"
+        android:src="@drawable/x" />
+
+
+    <ImageButton
+        android:id="@+id/btnstop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hand"
+        android:layout_toRightOf="@id/btnrestart"
+        android:layout_marginLeft="9dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnhelp"
+        android:layout_below="@+id/btnhelp"
+        android:layout_marginTop="13dp"
+        android:src="@drawable/atp_icon_retry" />
+
+    <TextView
+        android:id="@+id/tvtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/logo"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_time"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"/>
+    <TextView
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/ask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+
+        />
+    <Button
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ra"
+        android:layout_below="@id/ask"
+        android:background="@drawable/bg_nomal"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/rb"
+        android:layout_below="@id/ra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_nomal"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/rc"
+        android:layout_below="@id/rb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_nomal"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/rd"
+        android:layout_below="@id/rc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_nomal"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/tvmoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rd"
+        android:background="@drawable/bg_score"
+        android:gravity="center"
+        android:textColor="#FFAB00"
+        android:textSize="20sp" />
+</RelativeLayout>

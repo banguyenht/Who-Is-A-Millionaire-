@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#00ACC1"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:background="#2962FF"
+        android:textColor="#FFAB00"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="15     150.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="14     85.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="13     60.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="12     40.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="11     30.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:background="#2962FF"
+        android:textColor="#FFAB00"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="10     22.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="09     14.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="08     10.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="07     6.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="06     3.000.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:background="#2962FF"
+        android:textColor="#FFAB00"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="05     2.000.000"
+        android:gravity="center"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="04     1.000.000"
+        android:gravity="center"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="03    600.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="02    400.000"
+        android:gravity="center"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textSize="20sp" android:textStyle="bold"
+        android:text="01    200.000"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/btnctn"
+        android:layout_marginTop="50px"
+        android:textSize="17sp"
+        android:layout_marginLeft="700px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tiếp tục"
+        />
+
+</LinearLayout>

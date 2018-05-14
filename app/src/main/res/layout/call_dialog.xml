@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/bigronaldo"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:src="@drawable/bigronaldo"
+            />
+        <ImageView
+            android:id="@+id/messi"
+            android:layout_marginLeft="20dp"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:src="@drawable/messi"
+            />
+        <ImageView
+            android:id="@+id/congvinh"
+            android:layout_marginLeft="20dp"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:src="@drawable/congvinh"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/naymar"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:src="@drawable/leymar" />
+
+        <ImageView
+
+            android:id="@+id/suares"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/suarez" />
+
+        <ImageView
+            android:id="@+id/bill"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/bill" />
+
+
+    </LinearLayout>
+<TextView
+    android:layout_marginTop="10dp"
+    android:id="@+id/an_helper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="22sp"
+    />
+
+</LinearLayout>
