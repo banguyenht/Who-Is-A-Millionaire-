@@ -57,34 +57,34 @@ public class LevelAcitivity extends AppCompatActivity {
     private void setBackground(){
         switch (this.currentLevel){
             case 2:
-                question2.setBackgroundColor(Color.GREEN);
+                question2.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 3:
-                question3.setBackgroundColor(Color.GREEN);
+                question3.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 4:
-                question4.setBackgroundColor(Color.GREEN);
+                question4.setBackgroundResource(R.drawable.bg_choose2);
                 break;
                 case 1:
-                question1.setBackgroundColor(Color.GREEN);
+                question1.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 5:
-                question5.setBackgroundColor(Color.GREEN);
+                question5.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 6:
-                question6.setBackgroundColor(Color.GREEN);
+                question6.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 7:
-                question7.setBackgroundColor(Color.GREEN);
+                question7.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 8:
-                question8.setBackgroundColor(Color.GREEN);
+                question8.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 9:
-                question9.setBackgroundColor(Color.GREEN);
+                question9.setBackgroundResource(R.drawable.bg_choose2);
                 break;
             case 10:
-                question10.setBackgroundColor(Color.GREEN);
+                question10.setBackgroundResource(R.drawable.bg_choose2);
                 break;
 
         }
