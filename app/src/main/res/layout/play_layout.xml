@@ -22,18 +22,26 @@
 
     <ImageView
         android:layout_marginLeft="10dp"
-        android:id="@+id/btnhelp"
+        android:id="@+id/btnAudience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/hepl"
         android:layout_toRightOf="@id/btncall"
         />
+
+    <ImageView
+        android:id="@+id/btnAudiencex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btncall"
+        android:layout_alignStart="@+id/btnAudience"
+        android:src="@drawable/x" />
     <ImageButton
     android:id="@+id/btnpercen50"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/percent50"
-    android:layout_toRightOf="@id/btnhelp"
+    android:layout_toRightOf="@id/btnAudience"
     android:layout_marginLeft="10dp"
     />
 
@@ -77,8 +85,8 @@
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnhelp"
-        android:layout_below="@+id/btnhelp"
+        android:layout_alignStart="@+id/btnAudience"
+        android:layout_below="@+id/btnAudience"
         android:layout_marginTop="13dp"
         android:src="@drawable/atp_icon_retry" />
 

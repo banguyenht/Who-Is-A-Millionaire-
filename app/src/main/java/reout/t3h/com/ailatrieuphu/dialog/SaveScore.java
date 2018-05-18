@@ -18,6 +18,7 @@ import reout.t3h.com.ailatrieuphu.HightScore;
 import reout.t3h.com.ailatrieuphu.MainActivity;
 import reout.t3h.com.ailatrieuphu.PlayActivity;
 import reout.t3h.com.ailatrieuphu.R;
+import reout.t3h.com.ailatrieuphu.Utils;
 
 /**
  * Created by nguye on 3/9/2018.
@@ -58,7 +59,8 @@ public class SaveScore extends Dialog implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.btnsave:
                 if(dataBasemanager.getHightscore().size()!=0){
-                    dataBasemanager.updateHightscore(MainActivity.id, edtName.getText().toString(), MainActivity.questionPass, MainActivity.money);
+                    dataBasemanager.updateHightscore(MainActivity.id, edtName.getText().toString(),
+                            MainActivity.questionPass, MainActivity.money);
                 }
                 else {
                     HightScore hightScore=new HightScore();
@@ -67,6 +69,7 @@ public class SaveScore extends Dialog implements View.OnClickListener {
                     hightScore.setQuestion_pass(MainActivity.questionPass);
                     dataBasemanager.insertHightscore(hightScore);
                 }
+                dismiss();
                 return;
 //
         }

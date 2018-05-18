@@ -6,12 +6,16 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Utils {
-    public static boolean IS_CALLED = false;
-    public static boolean IS_5050 = false;
-    public static boolean IS_RESET = false;
-  //  public static boolean isPlaying = true;
-    public static int id;
-    public static int money;
+
+//    public static boolean IS_CALLED = false;
+//    public static boolean IS_5050 = false;
+//    public static boolean IS_RESET = false;
+//    public static int questionPass = 0;
+//    public static boolean isHightscore;
+//
+//  //  public static boolean isPlaying = true;
+//    public static int id;
+//    public static int money;
   //  public static int questionPass = 0;
   @SuppressLint("NewApi")
   public static void sortHightscore(List<HightScore> hightScores) {
@@ -41,5 +45,6 @@ public class Utils {
       hightScores.sort(comparator);
 
   }
+
 
 }

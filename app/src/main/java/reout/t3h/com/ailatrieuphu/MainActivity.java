@@ -14,29 +14,39 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import reout.t3h.com.ailatrieuphu.dialog.SaveScore;
 import reout.t3h.com.ailatrieuphu.dialog.ShowHightscore;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private MediaPlayer musicBg = null;
     private MediaPlayer musicPress = null;
+    public static boolean isPlaying = true;
+    public static int id;
+
     public static boolean IS_CALLED = false;
     public static boolean IS_5050 = false;
     public static boolean IS_RESET = false;
-    public static boolean isPlaying = true;
-    public static int id;
-    public static int money;
+    public static boolean IS_AUDIENCE = false;
     public static int questionPass = 0;
+//    public static boolean isHightscore;
 
-    private TextView tvName;
-    private TextView tvQuestionPass;
-    private TextView tvMoney;
-    // private Button btnHightscore;
+    //  public static boolean isPlaying = true;
+    public static int money;
+//    public static int money;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.begin_layout);
-        initview();
+            setContentView(R.layout.begin_layout);
+            initview();
+            if(PlayActivity.isHightscore){
+                //Intent intent=new Intent();
+                SaveScore dialog=new SaveScore(this);
+                dialog.show();
+                dialog.setCancelable(true);
+
+            }
+
     }
 
     private void initview() {
@@ -79,5 +89,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+    }
 }
