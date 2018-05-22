@@ -45,7 +45,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     public static final int ANSWER_C = 3;
     public static final int ANSWER_D = 4;
 
-    //  private int truePass = 0;
 
     private TextView ask;
     private MediaPlayer musicSelect;
@@ -77,6 +76,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_layout);
         dataBasemanager = new DataBasemanager(this);
+        hightScoreList = dataBasemanager.getHightscore();
         init();
         setContent();
         initHandler();
@@ -84,7 +84,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         setMoney();
         if (MainActivity.IS_CALLED == false) {
             btnx.setVisibility(View.INVISIBLE);
-            // Toast.makeText(this, "false", Toast.LENGTH_SHORT).show();
         }
         if (MainActivity.IS_CALLED == true) {
             btnx.setVisibility(View.VISIBLE);
@@ -92,7 +91,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         if (MainActivity.IS_5050 == false) {
             btnx5050.setVisibility(View.INVISIBLE);
         }
-        ///
         if (MainActivity.IS_5050 == true) {
             btnx5050.setVisibility(View.VISIBLE);
         }
@@ -103,11 +101,20 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         if (MainActivity.IS_RESET == false) {
             btnxReset.setVisibility(View.INVISIBLE);
         }
+        if (MainActivity.IS_AUDIENCE == true) {
+            btnxAudience.setVisibility(View.VISIBLE);
+        }
         if (MainActivity.IS_AUDIENCE == false) {
             btnxAudience.setVisibility(View.INVISIBLE);
         }
-
     }
+
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        DataBasemanager.level=1;
+//
+//    }
 
     private void initHandler() {
         this.mHandler = new Handler() {
@@ -141,7 +148,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             }
             Message msg;
             if (!isClickAns && this.time >= 0) {
-                //  Message msg;
+
                 msg = new Message();
                 msg.what = HANDLERTIME;
                 msg.arg1 = this.time;
@@ -153,6 +160,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
         }
         if (!runningThread && !isClickAns) {
+
             Intent intent = new Intent();
             intent.setClassName(PlayActivity.this, MainActivity.class.getName());
             startActivity(intent);
@@ -483,7 +491,12 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 return;
             case R.id.btnstop:
-
+//                openNext(this.mHandler);
+                if(!isClickAns){
+                    DataBasemanager.level=1;
+                    stopPlaying();
+                    this.runningThread=false;
+                }
 
                 return;
             case R.id.btncall:
@@ -497,15 +510,11 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 return;
             case R.id.btnAudience:
-                if (!isClickAns) {
+                if (!MainActivity.IS_AUDIENCE) {
                     btnxAudience.setVisibility(View.VISIBLE);
-//                    CallDialog callDialog = new CallDialog(this);
-//                    callDialog.setAnTrue(this.curentQuestion.getAn());
-//                    callDialog.show();
                     SupportAudition supportAudition=new SupportAudition(this,this.curentQuestion.getAn());
                     supportAudition.show();
                     supportAudition.setCancelable(true);
-                    Toast.makeText(this,"sssdfs",Toast.LENGTH_LONG).show();
                     btnAudience.setEnabled(false);
                     MainActivity.IS_AUDIENCE = true;
                 }
@@ -535,14 +544,10 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                         btnxReset.setVisibility(View.VISIBLE);
                         MainActivity.IS_RESET = true;
                         reset.setEnabled(false);
-                        recreate();//mở lại activity
+                        setContent();
                     }
                 }
-
                 return;
-//            case R.id.btnsave:
-//                Toast.makeText(PlayActivity.this,"save",Toast.LENGTH_LONG).show();
-//                return;
         }
 
         musicSelect.release();
@@ -618,6 +623,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFinish() {//khi đếm kết thúc
+//                DataBasemanager.level=1;
                 Intent intent = new Intent();
                 intent.setClass(PlayActivity.this, LevelAcitivity.class);
                 intent.putExtra("currentquestion", DataBasemanager.level);
@@ -628,7 +634,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setFalse() {
-        hightScoreList = dataBasemanager.getHightscore();
+        //hightScoreList = dataBasemanager.getHightscore();
+        DataBasemanager.level=1;
         int an = this.curentQuestion.getAn();
         SetAnimationFalse setAnimationFalse;
         Handler handler = new Handler();
@@ -696,6 +703,30 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         }, 3000);
         openNext(handler);
     }
+    private void stopPlaying(){
+       // DataBasemanager.level=1;
+        if (hightScoreList.size() != 0) {
+            for (HightScore hightScore : hightScoreList) {
+                if (hightScore.getMoney() < MainActivity.money) {
+//                    MainActivity.id = hightScore.getId();
+//                    handler.postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                        }
+//                    }, 3100);
+                    isHightscore = true;
+                    return;
+                }
+            }
+        }
+
+//
+        Intent intent = new Intent();
+        intent.putExtra("updatehightscore",isHightscore);
+        intent.setClass(PlayActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     private void openNext(Handler handler) {
         //boolean isOpenDiaglog = false;
@@ -703,7 +734,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
             for (HightScore hightScore : hightScoreList) {
                 if (hightScore.getMoney() < MainActivity.money) {
 //                    MainActivity.id = hightScore.getId();
-//                    handler.postDelayed(new Runnable() {
+//                    handler.postDelayed(nfw Runnable() {
 //                        @Override
 //                        public void run() {
 //
@@ -714,14 +745,14 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
-        else {
-            isHightscore=true;
-        }
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                //
+                // DataBasemanager.level=1;
                 Intent intent = new Intent();
-                intent.putExtra("Hight_score", MainActivity.money);
+               // intent.putExtra("Hight_score", MainActivity.money);
                 intent.setClass(PlayActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -747,7 +778,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
     private class SetAnimationFalse implements Runnable {
         private Button btnTrue;
-
         public SetAnimationFalse(Button btn) {
             this.btnTrue = btn;
         }

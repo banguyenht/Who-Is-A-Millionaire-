@@ -30,7 +30,6 @@ public class SaveScore extends Dialog implements View.OnClickListener {
     private EditText edtName;
     private HightScore hightScore;
     private DataBasemanager dataBasemanager;
-
     public SaveScore(@NonNull Context context) {
         super(context);
     }
@@ -50,8 +49,6 @@ public class SaveScore extends Dialog implements View.OnClickListener {
         btnCancel.setOnClickListener(this);
         edtName = (EditText) findViewById(R.id.edtname);
         dataBasemanager = new DataBasemanager(this.getContext());
-
-
     }
 
     @Override
@@ -71,7 +68,6 @@ public class SaveScore extends Dialog implements View.OnClickListener {
                 }
                 dismiss();
                 return;
-//
         }
 
     }

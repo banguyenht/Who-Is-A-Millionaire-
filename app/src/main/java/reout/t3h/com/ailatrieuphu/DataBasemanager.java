@@ -147,11 +147,12 @@ public class DataBasemanager {
         contentValues.put("money", hightScore.getMoney());
         openDb();
 
-        long index = sqliteManager.insertOrThrow("hight_score", null, contentValues);
+        long index = sqliteManager.insert("hight_score", null, contentValues);
         if (index > 0) {
             Log.d(TAG, "SUCCESS!!");
             closeDb();
         }
+
     }
     public void updateHightscore(int id, String name,int questionPass, int money){
         ContentValues contentValues=new ContentValues();
@@ -160,7 +161,6 @@ public class DataBasemanager {
         contentValues.put("money", money);
         openDb();
         sqliteManager.update("hight_score",contentValues,"id=?",new String[] {id+""});
-
     }
 
 
