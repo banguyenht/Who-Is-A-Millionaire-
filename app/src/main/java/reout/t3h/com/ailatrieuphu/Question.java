@@ -2,9 +2,6 @@ package reout.t3h.com.ailatrieuphu;
 
 import android.app.Application;
 
-/**
- * Created by nguye on 3/2/2018.
- */
 
 public class Question{
     private int id;

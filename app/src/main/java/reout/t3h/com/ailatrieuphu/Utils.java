@@ -42,6 +42,7 @@ public class Utils {
           }
 
       };
+
       hightScores.sort(comparator);
 
   }
